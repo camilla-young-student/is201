@@ -53,3 +53,20 @@ body {
 .center-text {
     text-align: center;
 }
+.back-to-top {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.back-to-top a {
+    text-decoration: none;
+    background-color: #d28ca6;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.back-to-top a:hover {
+    background-color: #b76c89;
+}
