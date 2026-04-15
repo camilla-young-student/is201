@@ -59,6 +59,7 @@ body {
 }
 
 .back-to-top a {
+    display: inline-block;
     text-decoration: none;
     background-color: #d28ca6;
     color: white;
