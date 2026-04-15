@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baking with Camilla</title>
+
+    <!-- LINK TO YOUR CUSTOM CSS -->
+    <link rel="stylesheet" href="scratch.css">
+
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<div class="nav">
+    <a href="resume.html">← Back to Resume</a>
+    <a href="#video">Watch Baking Video</a>
+    <a href="app.html">Interactive Web App →</a>
+</div>
+
+<!-- HEADER -->
+<div class="header" id="top">
+    <h1>🍰 Baking with Camilla</h1>
+    <p>My favorite hobby and the way I express my creativity</p>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="section">
+    <h2>Why I Love Baking:</h2>
+    <p>
+        Baking has always been a huge passion of mine. I love the creativity and the precision it requires. I first got into baking when I baked and sold over 600 pumpkin chocolate chip cookies to afford my Outdoor Education trip in fifth grade. I've loved baking as a way to release stress and bring joy to others ever since!
+    </p>
+
+    <!-- IMAGE (NOT FROM BOOTSTRAP) -->
+    <img src="assets/img/apple-pie.png.png" alt="Homemade Apple Pie" class="image">
+    <p class="center-text">
+        This is an apple pie I made from scratch two weeks ago.
+    </p>
+</div>
+
+<!-- LIST SECTION -->
+<div class="section">
+    <h2>My Favorite Things to Bake</h2>
+
+    <!-- ORDERED LIST WITH NESTED UNORDERED LIST -->
+    <ol>
+        <li>Cookies
+            <ul>
+                <li>Pumpkin Chocolate Chip Cookies</li>
+                <li>Chocolate Chip Cookies</li>
+                <li>Snickerdoodles</li>
+            </ul>
+        </li>
+        <li>Pies
+            <ul>
+                <li>Apple Pie</li>
+                <li>Chocolate Cream Pie</li>
+            </ul>
+        </li>
+        <li>Breads/Rolls
+            <ul>
+                <li>Banana bread</li>
+                <li>Dinner Rolls</li>
+                <li>Cinnamon Rolls</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+<!-- VIDEO SECTION -->
+<div class="section" id="video">
+    <h2>Baking Inspiration 🎥</h2>
+
+    <!-- YOUTUBE EMBED -->
+<iframe width="560" height="315" 
+    src="https://www.youtube.com/embed/cXAkYYjGdmM" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allowfullscreen>
+</iframe>
+</div>
+
+<!-- TABLEAU SECTION -->
+<div class="section">
+    <h2>Interactive Baking Data 📊</h2>
+
+    <!-- TABLEAU EMBED -->
+    <div class='tableauPlaceholder' id='viz168'>
+        <noscript>
+            <a href='#'>
+                <img alt='Tableau Graph' src='https://public.tableau.com/static/images/Co/CoffeeChain/Overview/1.png'>
+            </a>
+        </noscript>
+        <object class='tableauViz' width='100%' height='500'>
+            <param name='host_url' value='https://public.tableau.com/' />
+            <param name='name' value='CoffeeChain/Overview' />
+            <param name='tabs' value='no' />
+            <param name='toolbar' value='yes' />
+        </object>
+    </div>
+
+    <script type='text/javascript'>
+        var divElement = document.getElementById('viz168');
+        var vizElement = divElement.getElementsByTagName('object')[0];
+        vizElement.style.width = '100%';
+        vizElement.style.height = '500px';
+        var scriptElement = document.createElement('script');
+        scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+    <p>Made with ❤️ and lots of flour</p>
+    <a href="#top">Back to Top ↑</a>
+</div>
+
+</body>
+</html>

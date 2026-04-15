@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>What Should I Bake?</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5e6d3;
+            text-align: center;
+            padding: 50px;
+        }
+
+        h1 {
+            color: #8b4513;
+        }
+
+        .question {
+            margin: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            background-color: #8b4513;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #a0522d;
+        }
+
+        #result {
+            margin-top: 30px;
+            font-size: 22px;
+            font-weight: bold;
+            color: #5a2d0c;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>🍪 What Should You Bake? 🍰</h1>
+
+<div id="quiz"></div>
+
+<div id="result"></div>
+
+<br><br>
+<button onclick="restartQuiz()">Restart Quiz</button>
+
+<script>
+let answers = {};
+
+function showQuestion(questionHTML) {
+    document.getElementById("quiz").innerHTML = questionHTML;
+}
+
+function startQuiz() {
+    answers = {};
+
+    showQuestion(`
+        <div class="question">
+            <p>Quick or fancy?</p>
+            <button onclick="setAnswer('type','quick'); question2()">Quick</button>
+            <button onclick="setAnswer('type','fancy'); question2()">Fancy</button>
+        </div>
+    `);
+}
+
+function question2() {
+    showQuestion(`
+        <div class="question">
+            <p>Chocolate or fruity?</p>
+            <button onclick="setAnswer('flavor','chocolate'); question3()">Chocolate</button>
+            <button onclick="setAnswer('flavor','fruity'); question4()">Fruity</button>
+        </div>
+    `);
+}
+
+function question3() {
+    showQuestion(`
+        <div class="question">
+            <p>Soft or crispy?</p>
+            <button onclick="setAnswer('texture','soft'); question4()">Soft</button>
+            <button onclick="setAnswer('texture','crispy'); question4()">Crispy</button>
+        </div>
+    `);
+}
+
+function question4() {
+    showQuestion(`
+        <div class="question">
+            <p>Vegan or uses animal products?</p>
+            <button onclick="setAnswer('diet','vegan'); showResult()">Vegan</button>
+            <button onclick="setAnswer('diet','animal'); showResult()">Animal Products</button>
+        </div>
+    `);
+}
+
+function setAnswer(key, value) {
+    answers[key] = value;
+}
+
+function showResult() {
+    let { type, flavor, texture, diet } = answers;
+    let resultText = "";
+
+    if (type === "quick" && flavor === "chocolate" && texture === "soft") {
+        resultText = "🍫 Bake banana bread!";
+    }
+    else if (type === "quick" && flavor === "chocolate" && texture === "crispy") {
+        resultText = "🎃 Bake pumpkin chocolate chip cookies!";
+    }
+    else if (type === "quick" && flavor === "fruity") {
+        resultText = "🍒 Bake cherry cobbler!";
+    }
+    else if (type === "fancy" && flavor === "chocolate" && texture === "soft") {
+        resultText = "🥒 Bake chocolate zucchini bread!";
+    }
+    else if (type === "fancy" && flavor === "chocolate" && texture === "crispy") {
+        resultText = "🎂 Bake funfetti cake with vanilla frosting!";
+    }
+    else if (type === "fancy" && flavor === "fruity") {
+        resultText = "🍓 Bake a fruit tart!";
+    }
+    else {
+        resultText = "🍪 Try baking cookies!";
+    }
+
+    if (diet === "vegan") {
+        resultText += " (Make it vegan 🌱)";
+    }
+
+    document.getElementById("quiz").innerHTML = "";
+    document.getElementById("result").innerText = resultText;
+}
+
+function restartQuiz() {
+    document.getElementById("result").innerText = "";
+    startQuiz();
+}
+
+startQuiz();
+</script>
+
+</body>
+</html>
